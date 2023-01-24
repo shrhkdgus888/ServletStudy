@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>servletex</display-name>
+<!--  ※ 서블릿 등록
+  		- 클라이언트의 요청을 처리하는 클래스
+  		- 즉 톰캣에 서블릿을 등록하는 것 -->
+  <servlet>
+  	<servlet-name>loginServlet</servlet-name>
+  	<servlet-class>servletex.LoginServlet</servlet-class>
+  </servlet>
+
+<!-- ※ 서블릿 경로 매핑
+		- 브라우저에서 jsp를 요청하는 기존의 방식에서 
+		- 서블릿으로 처리하도록 만들때는 서블릿을 등록한 다음, 
+		- 브라우저가 서버에게 어떻게 요청했을때 동작할 것인가를 적어줘야함. -->
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+<!-- 브라우저 최상위(/)에 login이라고 요청이 들어오면 동작함.
+  		- ex) localhost:8090/servlet/login -->
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+</web-app>
